@@ -1,0 +1,22 @@
+extends layouts/main-layout.pug
+    
+block styles
+    link(rel="stylesheet", href="/css/product.css")
+
+block content
+        main
+            if prods.length > 0
+                .grid
+                    each product in prods
+                        article.card.product-item 
+                            header.card_image
+                                h1.product_title #{product.title}  
+                            div.card_image  
+                                img(src="https://media.istockphoto.com/id/1216658448/photo/stack-of-colorful-books-isolated-on-white-background-collection-of-different-books-hardback.jpg?s=612x612&w=0&k=20&c=_8yq2H5pkScnt0-DXkud4EEJKi8P0RRzZpAUSrh5lvk=", alt="A book")
+                            div.card_content 
+                                h2.product_price $19.99
+                                p.product_description A very iteresting book about s many even more 
+                            .card_actions 
+                                buttom.btn Add to cart 
+            else 
+                h1 No Products 
